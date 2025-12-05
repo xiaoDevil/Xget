@@ -97,6 +97,7 @@
  * - `ip-featherlessai` - Featherless AI
  * - `ip-hyperbolic` - Hyperbolic
  * - `ip-anyrouter` - AnyRouter
+ * - `ip-ar` - AnyRouter
  *
  * **Container Registries (prefix: cr-):**
  * - `cr-docker` - Docker Hub (registry-1.docker.io)
