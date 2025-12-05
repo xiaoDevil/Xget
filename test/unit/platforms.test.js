@@ -389,7 +389,8 @@ describe('Platform Configuration', () => {
         'ip-openrouter',
         'ip-poe',
         'ip-featherlessai',
-        'ip-hyperbolic'
+        'ip-hyperbolic',
+        'ip-anyrouter'
       ];
 
       aiProviders.forEach(provider => {
@@ -441,6 +442,11 @@ describe('Platform Configuration', () => {
           provider: 'ip-groq',
           inputPath: '/ip/groq/openai/v1/chat/completions',
           expectedPath: '/openai/v1/chat/completions'
+        },
+        {
+          provider: 'ip-anyrouter',
+          inputPath: '/ip/anyrouter/v1/chat/completions',
+          expectedPath: '/v1/chat/completions'
         }
       ];
 
@@ -463,7 +469,8 @@ describe('Platform Configuration', () => {
         'ip-groq',
         'ip-fireworks',
         'ip-mistralai',
-        'ip-perplexity'
+        'ip-perplexity',
+        'ip-anyrouter'
       ];
 
       aiProviders.forEach(provider => {
