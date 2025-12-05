@@ -787,14 +787,14 @@ async function handleRequest(request, env, ctx) {
     // Sort platforms by path length (descending) to prioritize more specific paths
     // e.g., conda/community should match before conda, pypi/files before pypi
     const sortedPlatforms = Object.keys(config.PLATFORMS).sort((a, b) => {
-      const pathA = `/${a.replace('-', '/')}/`;
-      const pathB = `/${b.replace('-', '/')}/`;
+      const pathA = `/${a.replace(/-/g, '/')}/`;
+      const pathB = `/${b.replace(/-/g, '/')}/`;
       return pathB.length - pathA.length;
     });
 
     const platform =
       sortedPlatforms.find(key => {
-        const expectedPrefix = `/${key.replace('-', '/')}/`;
+        const expectedPrefix = `/${key.replace(/-/g, '/')}/`;
         return effectivePath.startsWith(expectedPrefix);
       }) || effectivePath.split('/')[1];
 
